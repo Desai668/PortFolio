@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Career | Subodha</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:#f1f5f9;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(15,23,42,0.82),
+        rgba(15,23,42,0.88)
+    ),
+    url("Images/Background.jpg");
+
+    background-size:cover;
+    background-position:center;
+    z-index:-2;
+}
+
+/* NAVBAR */
+
+header{
+    width:100%;
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    background:rgba(15,23,42,0.65);
+    backdrop-filter:blur(8px);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+    color:white;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:#cbd5e1;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#38bdf8;
+}
+
+/* CONTACT BUTTON */
+
+.contact-btn{
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:10px;
+    background:#38bdf8;
+    color:#0f172a;
+    font-weight:600;
+    transition:0.3s;
+    white-space:nowrap;
+}
+
+.contact-btn:hover{
+    transform:translateY(-3px);
+    background:#7dd3fc;
+}
+
+/* MAIN SECTION */
+
+.career-section{
+    min-height:100vh;
+    padding:150px 8% 80px;
+}
+
+/* TITLE */
+
+.section-heading{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-heading h1{
+    font-size:48px;
+    color:#38bdf8;
+}
+
+.title-line{
+    width:120px;
+    height:4px;
+    background:#38bdf8;
+    margin:15px auto 0;
+    border-radius:10px;
+}
+
+/* SUMMARY */
+
+.summary-box{
+    max-width:1100px;
+    margin:auto;
+    margin-bottom:80px;
+
+    background:rgba(30,41,59,0.55);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:20px;
+
+    padding:40px;
+
+    backdrop-filter:blur(8px);
+
+    animation:fadeUp 1s ease;
+}
+
+.summary-box h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:30px;
+    color:#38bdf8;
+}
+
+.summary-box p{
+    font-size:22px;
+    line-height:1.9;
+    color:#cbd5e1;
+    text-align:center;
+}
+
+/* GOALS */
+
+.goals-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.goals-title h2{
+    font-size:42px;
+    color:#38bdf8;
+}
+
+.goals-container{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+}
+
+/* GOAL CARD */
+
+.goal-card{
+
+    background:rgba(30,41,59,0.55);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    backdrop-filter:blur(8px);
+
+    transition:0.4s;
+}
+
+.goal-card:hover{
+    transform:translateY(-8px);
+}
+
+.goal-card h3{
+    text-align:center;
+    font-size:34px;
+    margin-bottom:35px;
+    color:#38bdf8;
+}
+
+/* LIST */
+
+.goal-list{
+    list-style:none;
+}
+
+.goal-list li{
+
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+
+    background:#1e293b;
+
+    padding:18px 20px;
+
+    border-radius:14px;
+
+    margin-bottom:20px;
+
+    color:#e2e8f0;
+
+    font-size:20px;
+
+    transition:0.3s;
+
+    line-height:1.6;
+}
+
+.goal-list li:hover{
+    transform:translateX(8px);
+    background:#334155;
+}
+
+.goal-list i{
+    color:#38bdf8;
+    font-size:18px;
+    margin-top:6px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.08);
+    background:#0f172a;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+
+/* TABLET RESPONSIVE */
+
+@media(max-width:1100px){
+
+    header{
+        padding:18px 5%;
+    }
+
+    .career-section{
+        padding:140px 5% 70px;
+    }
+
+    .goals-container{
+        grid-template-columns:1fr;
+    }
+
+    nav{
+        gap:18px;
+    }
+
+    .summary-box p{
+        font-size:19px;
+    }
+
+    .section-heading h1{
+        font-size:42px;
+    }
+
+    .goals-title h2{
+        font-size:38px;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media(max-width:768px){
+
+    header{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+        padding:15px 5%;
+    }
+
+    .logo{
+        width:100%;
+        text-align:center;
+        font-size:24px;
+    }
+
+    nav{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:14px;
+    }
+
+    nav a{
+        font-size:15px;
+    }
+
+    .contact-btn{
+        padding:10px 18px;
+        font-size:14px;
+    }
+
+    .career-section{
+        padding:200px 5% 60px;
+    }
+
+    .section-heading{
+        margin-bottom:40px;
+    }
+
+    .section-heading h1,
+    .goals-title h2{
+        font-size:34px;
+    }
+
+    .summary-box{
+        padding:28px 22px;
+        margin-bottom:60px;
+    }
+
+    .summary-box h2,
+    .goal-card h3{
+        font-size:28px;
+    }
+
+    .summary-box p{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .goal-card{
+        padding:25px 20px;
+    }
+
+    .goal-list li{
+        font-size:15px;
+        padding:16px;
+    }
+
+    footer{
+        font-size:14px;
+        padding:16px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+    .logo{
+        font-size:22px;
+    }
+
+    nav{
+        gap:10px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .contact-btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .career-section{
+        padding-top:230px;
+    }
+
+    .section-heading h1,
+    .goals-title h2{
+        font-size:28px;
+    }
+
+    .summary-box h2,
+    .goal-card h3{
+        font-size:24px;
+    }
+
+    .summary-box p{
+        font-size:14px;
+    }
+
+    .goal-list li{
+        font-size:14px;
+    }
+
+    .goal-card{
+        padding:20px 16px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        <span>●</span> Subodha
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="education.html">Education</a>
+        <a href="career.html" class="active">Career</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="achieve.html">Achievements</a>
+    </nav>
+
+    <a href="contact.html" class="contact-btn">
+        <i class="fa-solid fa-envelope"></i>
+        Contact Me
+    </a>
+
+</header>
+
+<!-- CAREER SECTION -->
+
+<section class="career-section">
+
+    <!-- TITLE -->
+
+    <div class="section-heading">
+
+        <h1>Career Journey</h1>
+
+        <div class="title-line"></div>
+
+    </div>
+
+    <!-- SUMMARY -->
+
+    <div class="summary-box">
+
+        <h2>Professional Summary</h2>
+
+        <p>
+            I'm Subodha, a creative problem-solver who is passionate
+            about web development and design. With a background in
+            coding and an eye for aesthetics, I enjoy building modern
+            digital experiences that are clean, responsive, and user-friendly.
+            My goal is to continuously improve my technical knowledge,
+            creativity, and professional growth while creating impactful
+            solutions for people and businesses.
+        </p>
+
+    </div>
+
+    <!-- GOALS TITLE -->
+
+    <div class="goals-title">
+
+        <h2>Career Goals</h2>
+
+        <div class="title-line"></div>
+
+    </div>
+
+    <!-- GOALS -->
+
+    <div class="goals-container">
+
+        <!-- SHORT TERM -->
+
+        <div class="goal-card">
+
+            <h3>Short-Term Goals</h3>
+
+            <ul class="goal-list">
+
+                <li>
+                    <i class="fa-solid fa-circle"></i>
+                    Develop technical skills in web development.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle"></i>
+                    Gain practical experience through collaboration.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle"></i>
+                    Build a strong professional portfolio.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle"></i>
+                    Learn advanced frontend and backend technologies.
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- LONG TERM -->
+
+        <div class="goal-card">
+
+            <h3>Long-Term Goals</h3>
+
+            <ul class="goal-list">
+
+                <li>
+                    <i class="fa-solid fa-circle"></i>
+                    Establish a successful web development agency.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle"></i>
+                    Lead a team of creative professionals.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle"></i>
+                    Contribute to business growth through online solutions.
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-circle"></i>
+                    Build innovative digital products and services.
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    © 2026 • Subodha • All Rights Reserved
+</footer>
+
+<script>
+
+/* ANIMATION ON LOAD */
+
+const cards = document.querySelectorAll(".goal-card");
+
+cards.forEach((card,index)=>{
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(40px)";
+
+    setTimeout(()=>{
+
+        card.style.transition = "0.8s";
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0px)";
+
+    },300 * index);
+
+});
+
+</script>
+
+</body>
+</html>

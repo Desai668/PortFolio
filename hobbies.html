@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hobbies | Subodha</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:#f1f5f9;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(15,23,42,0.82),
+        rgba(15,23,42,0.88)
+    ),
+    url("Images/Background.jpg");
+
+    background-size:cover;
+    background-position:center;
+    z-index:-2;
+}
+
+/* NAVBAR */
+
+header{
+    width:100%;
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    background:rgba(15,23,42,0.65);
+    backdrop-filter:blur(8px);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+    color:white;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:#cbd5e1;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover,
+nav a.active{
+    color:#38bdf8;
+}
+
+/* CONTACT BUTTON */
+
+.contact-btn{
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:10px;
+    background:#38bdf8;
+    color:#0f172a;
+    font-weight:600;
+    transition:0.3s;
+    white-space:nowrap;
+}
+
+.contact-btn:hover{
+    transform:translateY(-3px);
+    background:#7dd3fc;
+}
+
+/* MAIN SECTION */
+
+.hobbies-section{
+    min-height:100vh;
+    padding:150px 8% 80px;
+}
+
+/* TITLE */
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h1{
+    font-size:52px;
+    color:#38bdf8;
+}
+
+.title-line{
+    width:130px;
+    height:4px;
+    background:#38bdf8;
+    margin:15px auto 0;
+    border-radius:10px;
+}
+
+/* HOBBIES GRID */
+
+.hobbies-container{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+}
+
+/* CARD */
+
+.hobby-card{
+
+    background:rgba(30,41,59,0.55);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    border-radius:20px;
+
+    padding:35px 28px;
+
+    backdrop-filter:blur(8px);
+
+    transition:0.4s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hobby-card:hover{
+    transform:translateY(-10px);
+    border-color:#38bdf8;
+}
+
+/* ICON */
+
+.hobby-icon{
+    width:80px;
+    height:80px;
+
+    margin:auto;
+    margin-bottom:25px;
+
+    border-radius:50%;
+
+    background:#1e293b;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#38bdf8;
+    font-size:32px;
+
+    transition:0.4s;
+}
+
+.hobby-card:hover .hobby-icon{
+    transform:rotate(10deg) scale(1.1);
+}
+
+/* TEXT */
+
+.hobby-card h2{
+    text-align:center;
+    font-size:32px;
+    margin-bottom:15px;
+    color:#38bdf8;
+}
+
+.card-line{
+    width:90px;
+    height:4px;
+    background:#38bdf8;
+    margin:0 auto 25px;
+    border-radius:10px;
+}
+
+.hobby-card p{
+    font-size:18px;
+    line-height:1.9;
+    color:#cbd5e1;
+    text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.08);
+    background:#0f172a;
+}
+
+/* ANIMATION */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+
+/* LARGE TABLETS */
+
+@media(max-width:1300px){
+
+    .hobbies-container{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    header{
+        padding:20px 5%;
+    }
+
+    .hobbies-section{
+        padding:140px 5% 70px;
+    }
+}
+
+/* TABLETS */
+
+@media(max-width:900px){
+
+    .hobbies-container{
+        grid-template-columns:1fr;
+    }
+
+    nav{
+        gap:18px;
+    }
+
+    .hobby-card h2{
+        font-size:28px;
+    }
+
+    .hobby-card p{
+        font-size:17px;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    header{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+        padding:15px 5%;
+    }
+
+    .logo{
+        width:100%;
+        text-align:center;
+        font-size:24px;
+    }
+
+    nav{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:14px;
+    }
+
+    nav a{
+        font-size:15px;
+    }
+
+    .contact-btn{
+        padding:10px 18px;
+        font-size:14px;
+    }
+
+    .hobbies-section{
+        padding:200px 5% 60px;
+    }
+
+    .section-title{
+        margin-bottom:50px;
+    }
+
+    .section-title h1{
+        font-size:36px;
+    }
+
+    .title-line{
+        width:100px;
+    }
+
+    .hobbies-container{
+        gap:22px;
+    }
+
+    .hobby-card{
+        padding:28px 22px;
+        border-radius:18px;
+    }
+
+    .hobby-icon{
+        width:70px;
+        height:70px;
+        font-size:28px;
+        margin-bottom:20px;
+    }
+
+    .hobby-card h2{
+        font-size:24px;
+    }
+
+    .card-line{
+        width:70px;
+        margin-bottom:18px;
+    }
+
+    .hobby-card p{
+        font-size:15px;
+        line-height:1.8;
+    }
+
+    footer{
+        font-size:14px;
+        padding:16px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+    .logo{
+        font-size:22px;
+    }
+
+    nav{
+        gap:10px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .contact-btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .hobbies-section{
+        padding-top:230px;
+    }
+
+    .section-title h1{
+        font-size:30px;
+    }
+
+    .hobby-card{
+        padding:24px 18px;
+    }
+
+    .hobby-card h2{
+        font-size:22px;
+    }
+
+    .hobby-card p{
+        font-size:14px;
+    }
+
+    .hobby-icon{
+        width:65px;
+        height:65px;
+        font-size:24px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="logo">
+        <span>●</span> Subodha
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="education.html">Education</a>
+        <a href="career.html">Career</a>
+        <a href="hobbies.html" class="active">Hobbies</a>
+        <a href="achieve.html">Achievements</a>
+    </nav>
+
+    <a href="contact.html" class="contact-btn">
+        <i class="fa-solid fa-envelope"></i>
+        Contact Me
+    </a>
+
+</header>
+
+<!-- HOBBIES SECTION -->
+
+<section class="hobbies-section">
+
+    <!-- TITLE -->
+
+    <div class="section-title">
+
+        <h1>My Hobbies</h1>
+
+        <div class="title-line"></div>
+
+    </div>
+
+    <!-- HOBBIES -->
+
+    <div class="hobbies-container">
+
+        <!-- TRAVELLING -->
+
+        <div class="hobby-card">
+
+            <div class="hobby-icon">
+                <i class="fa-solid fa-plane"></i>
+            </div>
+
+            <h2>Travelling</h2>
+
+            <div class="card-line"></div>
+
+            <p>
+                Travelling allows me to explore new places,
+                experience different cultures, and gain fresh
+                perspectives about life and people around the world.
+            </p>
+
+        </div>
+
+        <!-- POETRY -->
+
+        <div class="hobby-card">
+
+            <div class="hobby-icon">
+                <i class="fa-solid fa-pen-nib"></i>
+            </div>
+
+            <h2>Poetry Writing</h2>
+
+            <div class="card-line"></div>
+
+            <p>
+                Writing poetry helps me express emotions,
+                creativity, and thoughts in a meaningful way.
+                It allows me to turn imagination into words.
+            </p>
+
+        </div>
+
+        <!-- ARTWORK -->
+
+        <div class="hobby-card">
+
+            <div class="hobby-icon">
+                <i class="fa-solid fa-palette"></i>
+            </div>
+
+            <h2>Artwork</h2>
+
+            <div class="card-line"></div>
+
+            <p>
+                I enjoy creating artwork and exploring creative designs.
+                Drawing and digital creativity help me express imagination,
+                improve focus, and develop unique visual ideas.
+            </p>
+
+        </div>
+
+        <!-- WEB DEVELOPMENT -->
+
+        <div class="hobby-card">
+
+            <div class="hobby-icon">
+                <i class="fa-solid fa-code"></i>
+            </div>
+
+            <h2>Web Development</h2>
+
+            <div class="card-line"></div>
+
+            <p>
+                I enjoy designing and developing modern websites using
+                HTML, CSS, JavaScript, and Python. Building responsive
+                projects helps me improve creativity and problem-solving skills.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    © 2026 • Subodha • All Rights Reserved
+</footer>
+
+<script>
+
+/* CARD ANIMATION */
+
+const cards = document.querySelectorAll(".hobby-card");
+
+cards.forEach((card,index)=>{
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(40px)";
+
+    setTimeout(()=>{
+
+        card.style.transition = "0.8s";
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0px)";
+
+    },250 * index);
+
+});
+
+</script>
+
+</body>
+</html>

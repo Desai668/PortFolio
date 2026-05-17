@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Subodha L Desai Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0f172a;
+    color:#f1f5f9;
+    overflow-x:hidden;
+}
+
+/* BACKGROUND */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(
+        rgba(15,23,42,0.82),
+        rgba(15,23,42,0.88)
+    ),
+    url("Images/Background.jpg");
+
+    background-size:cover;
+    background-position:center;
+    z-index:-2;
+}
+
+/* NAVBAR */
+
+header{
+    width:100%;
+    padding:22px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+
+    background:rgba(15,23,42,0.65);
+    backdrop-filter:blur(8px);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+    color:white;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+nav{
+    display:flex;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    text-decoration:none;
+    color:#cbd5e1;
+    font-weight:500;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* CONTACT BUTTON */
+
+.contact-btn{
+    text-decoration:none;
+    padding:12px 22px;
+    border-radius:10px;
+    background:#38bdf8;
+    color:#0f172a;
+    font-weight:600;
+    transition:0.3s;
+    white-space:nowrap;
+}
+
+.contact-btn:hover{
+    transform:translateY(-3px);
+    background:#7dd3fc;
+}
+
+/* HERO SECTION */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    padding:140px 7% 60px;
+    gap:40px;
+}
+
+/* LEFT CONTENT */
+
+.hero-content{
+    width:55%;
+}
+
+.hero-content h1{
+    font-size:68px;
+    line-height:1.2;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.name{
+    color:#38bdf8;
+}
+
+.typing{
+    color:#facc15;
+}
+
+.hero-content p{
+    font-size:18px;
+    line-height:1.8;
+    color:#cbd5e1;
+    margin-bottom:35px;
+}
+
+/* BUTTONS */
+
+.buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:15px 32px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.3s;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+}
+
+.btn-primary{
+    background:#38bdf8;
+    color:#0f172a;
+}
+
+.btn-primary:hover{
+    background:#7dd3fc;
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    border:2px solid #94a3b8;
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:#1e293b;
+}
+
+/* RIGHT IMAGE */
+
+.hero-image{
+    width:45%;
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+}
+
+.hero-image img{
+    width:500px;
+    max-width:100%;
+    object-fit:contain;
+
+    filter:drop-shadow(0 0 20px rgba(0,0,0,0.35));
+
+    animation:floatImage 6s ease-in-out infinite;
+}
+
+/* FLOATING ANIMATION */
+
+@keyframes floatImage{
+
+    0%{
+        transform:translate(0px,0px) rotate(0deg);
+    }
+
+    25%{
+        transform:translate(-8px,-10px) rotate(-1deg);
+    }
+
+    50%{
+        transform:translate(8px,-15px) rotate(1deg);
+    }
+
+    75%{
+        transform:translate(-6px,8px) rotate(-1deg);
+    }
+
+    100%{
+        transform:translate(0px,0px) rotate(0deg);
+    }
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:20px;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,0.08);
+    background:#0f172a;
+}
+
+/* LARGE TABLETS */
+
+@media(max-width:1100px){
+
+    header{
+        padding:18px 5%;
+    }
+
+    .hero{
+        flex-direction:column-reverse;
+        text-align:center;
+        padding:180px 5% 70px;
+    }
+
+    .hero-content{
+        width:100%;
+    }
+
+    .hero-image{
+        width:100%;
+        justify-content:center;
+    }
+
+    .hero-image img{
+        width:420px;
+    }
+
+    nav{
+        gap:18px;
+    }
+
+    .hero-content h1{
+        font-size:52px;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    header{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+        padding:15px 5%;
+    }
+
+    .logo{
+        width:100%;
+        text-align:center;
+        font-size:24px;
+    }
+
+    nav{
+        width:100%;
+        justify-content:center;
+        flex-wrap:wrap;
+        gap:14px;
+    }
+
+    nav a{
+        font-size:15px;
+    }
+
+    .contact-btn{
+        padding:10px 18px;
+        font-size:14px;
+    }
+
+    .hero{
+        padding:220px 5% 60px;
+        gap:30px;
+    }
+
+    .hero-content h1{
+        font-size:40px;
+        line-height:1.3;
+    }
+
+    .hero-content p{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .hero-image img{
+        width:320px;
+    }
+
+    .buttons{
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .btn{
+        width:100%;
+        max-width:280px;
+        justify-content:center;
+    }
+
+    footer{
+        font-size:14px;
+        padding:16px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+    .logo{
+        font-size:22px;
+    }
+
+    nav{
+        gap:10px;
+    }
+
+    nav a{
+        font-size:14px;
+    }
+
+    .contact-btn{
+        width:100%;
+        text-align:center;
+    }
+
+    .hero{
+        padding-top:250px;
+    }
+
+    .hero-content h1{
+        font-size:32px;
+    }
+
+    .hero-content p{
+        font-size:14px;
+    }
+
+    .hero-image img{
+        width:260px;
+    }
+
+    .btn{
+        padding:14px 20px;
+        font-size:14px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<header>
+
+    <div class="logo">
+        <span>●</span> Subodha L Desai
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="skills.html">Skills</a>
+        <a href="education.html">Education</a>
+        <a href="career.html">Career</a>
+        <a href="hobbies.html">Hobbies</a>
+        <a href="achieve.html">Achievements</a>
+    </nav>
+
+    <a href="contact.html" class="contact-btn">
+        <i class="fa-solid fa-envelope"></i>
+        Contact Me
+    </a>
+
+</header>
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <!-- LEFT CONTENT -->
+
+    <div class="hero-content">
+
+        <h1>
+            I'm <span class="name">Subodha L Desai</span><br>
+            and I'm a<br>
+
+            <span class="typing" id="typing-text">
+                Web Developer
+            </span><span class="typing">|</span>
+        </h1>
+
+        <p>
+            A passionate creator focused on building clean websites,
+            creative visual designs, and modern digital experiences.
+            I enjoy blending technology and creativity to create
+            professional and user-friendly projects.
+        </p>
+
+        <div class="buttons">
+
+            <!-- PDF PREVIEW BUTTON -->
+
+            <a href="Subodha_Resume.pdf"
+               target="_blank"
+               class="btn btn-primary">
+
+                <i class="fa-solid fa-download"></i>
+                Download CV
+
+            </a>
+
+            <a href="contact.html" class="btn btn-secondary">
+                <i class="fa-solid fa-user"></i>
+                Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT IMAGE -->
+
+    <div class="hero-image">
+        <img src="Images/MyImage.png" alt="Subodha Image">
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+    © 2026 • Subodha L Desai • All Rights Reserved
+</footer>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+const typingText = document.getElementById("typing-text");
+
+const words = [
+    "Web Developer",
+    "Photographer",
+    "Graphic Designer",
+    "Traveller",
+    "Artist"
+];
+
+let wordIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeAnimation(){
+
+    let currentWord = words[wordIndex];
+
+    if(!deleting){
+
+        typingText.textContent =
+        currentWord.substring(0,charIndex + 1);
+
+        charIndex++;
+
+        if(charIndex === currentWord.length){
+
+            deleting = true;
+
+            setTimeout(typeAnimation,1500);
+
+            return;
+        }
+
+    }else{
+
+        typingText.textContent =
+        currentWord.substring(0,charIndex - 1);
+
+        charIndex--;
+
+        if(charIndex === 0){
+
+            deleting = false;
+
+            wordIndex++;
+
+            if(wordIndex >= words.length){
+                wordIndex = 0;
+            }
+        }
+    }
+
+    setTimeout(typeAnimation,deleting ? 70 : 120);
+}
+
+typeAnimation();
+
+</script>
+
+</body>
+</html>
